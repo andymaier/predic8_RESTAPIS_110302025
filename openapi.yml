@@ -8,7 +8,7 @@ info:
     url: "https://www.predic8.de"
     email: "maier@predic8.de"
 servers:
-  - url: http://localhost:8080
+  - url: http://localhost:8080/v1
 tags:
   - name: "Shop"
 paths:
