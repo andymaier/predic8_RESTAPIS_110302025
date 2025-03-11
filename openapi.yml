@@ -91,7 +91,61 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Artikel'
-    
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Artikel'
+      tags:
+        - Shop
+      summary: Aktualisiere einen Artikel
+      description: Aktualisiere einen Artikel
+      operationId: putArtikelAid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artikel'
+    patch:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchArtikel'
+      tags:
+        - Shop
+      summary: Ändere den Wert eines Feldes
+      description: Ändert den Wert eines Feldes
+      operationId: patchArtikelAid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artikel'
+    delete:
+      tags:
+        - Shop
+      summary: Lösche einen Artikel
+      description: Lösche einen Artikel
+      operationId: deleteArtikelAid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusMeldung'
+        '4XX':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusMeldung'
 
 
 components:
@@ -112,3 +166,31 @@ components:
       required:
         - name
         - preis
+    PatchArtikel:
+      properties:
+        name:
+          type: string
+          maxLength: 50
+          minLength: 3
+          description: Name des Artikels
+          example: Cherry
+        preis:
+          type: number
+          minimum: 0
+          description: Preis des Artikels
+          example: 3.99
+    StatusMeldung:
+      properties:
+        nachricht:
+          type: string
+          maxLength: 1000
+          minLength: 3
+          description: Nachricht
+          example: Test
+        ApplicationCode:
+          type: integer
+          maxLength: 10          
+          description: Status Code der Applikation
+          example: 2631234
+        
+
