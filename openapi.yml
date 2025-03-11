@@ -3,8 +3,10 @@ info:
   title: Katalog API
   version: '1.0'
   description: Katalog API
-  #contact: 
-  #  Person
+  contact:
+    name: "Andreas"
+    url: "https://www.predic8.de"
+    email: "maier@predic8.de"
 servers:
   - url: https://api.server.test/v1
 tags:
@@ -16,12 +18,33 @@ paths:
         - Shop
       summary: Gebe alle Artikel zurück
       description: Liefert alle Artikel zurück
+      operationId: getArtikel
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Artikel'
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Artikel'
+      tags:
+        - Shop
+      summary: Füge einen Artikel hinzu
+      description: Fügt einen Artikel hinzu
+      operationId: postArtikel
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:                
                 $ref: '#/components/schemas/Artikel'
 
 
