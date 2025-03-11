@@ -69,6 +69,29 @@ paths:
               schema:                
                 $ref: '#/components/schemas/Artikel'
 
+  /artikel/{aid}:
+    parameters:
+      - in: path
+        name: aid
+        schema:
+          type: string
+        required: true
+        description: Artikel ID
+        example: "123456678"
+    get:
+      tags:
+        - Shop
+      summary: Gebe einen Artikel zurück
+      description: Liefert einen Artikel zurück
+      operationId: getArtikelAid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artikel'
+    
 
 
 components:
