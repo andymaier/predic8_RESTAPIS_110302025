@@ -19,6 +19,8 @@ paths:
       summary: Gebe alle Artikel zurück
       description: Liefert alle Artikel zurück
       operationId: getArtikel
+      security:
+        - ApiKeyAuth: []      
       responses:
         '200':
           description: OK
@@ -149,6 +151,11 @@ paths:
 
 
 components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY 
   schemas:
     Artikel:
       properties:
