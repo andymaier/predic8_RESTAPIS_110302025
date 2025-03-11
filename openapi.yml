@@ -1,0 +1,46 @@
+openapi: '3.0.3'
+info:
+  title: Katalog API
+  version: '1.0'
+  description: Katalog API
+  #contact: 
+  #  Person
+servers:
+  - url: https://api.server.test/v1
+tags:
+  - name: "Shop"
+paths:
+  /artikel:
+    get:
+      tags:
+        - Shop
+      summary: Gebe alle Artikel zurück
+      description: Liefert alle Artikel zurück
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artikel'
+
+
+
+components:
+  schemas:
+    Artikel:
+      properties:
+        name:
+          type: string
+          maxLength: 50
+          minLength: 3
+          description: Name des Artikels
+          example: Cherry
+        preis:
+          type: number
+          minimum: 0
+          description: Preis des Artikels
+          example: 3.99
+      required:
+        - name
+        - preis
