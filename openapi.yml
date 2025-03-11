@@ -20,7 +20,7 @@ paths:
       description: Liefert alle Artikel zurück
       operationId: getArtikel
       security:
-        - ApiKeyAuth: []      
+        - ApiKeyAuth: [] 
       responses:
         '200':
           description: OK
@@ -170,9 +170,15 @@ components:
           minimum: 0
           description: Preis des Artikels
           example: 3.99
+        preis2:
+          type: number
+          minimum: 0
+          description: Preis des Artikels
+          example: 3.99
       required:
         - name
         - preis
+        - preis2
     PatchArtikel:
       properties:
         name:
