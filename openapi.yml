@@ -188,8 +188,7 @@ components:
           description: Nachricht
           example: Test
         ApplicationCode:
-          type: integer
-          maxLength: 10          
+          type: integer        
           description: Status Code der Applikation
           example: 2631234
         
