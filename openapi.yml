@@ -158,6 +158,7 @@ components:
       name: X-API-KEY 
   schemas:
     Artikel:
+      type: object
       properties:
         name:
           type: string
@@ -180,6 +181,7 @@ components:
         - preis
         - preis2
     PatchArtikel:
+      type: object
       properties:
         name:
           type: string
@@ -193,6 +195,7 @@ components:
           description: Preis des Artikels
           example: 3.99
     StatusMeldung:
+      type: object
       properties:
         nachricht:
           type: string
