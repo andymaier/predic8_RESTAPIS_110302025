@@ -37,7 +37,29 @@ paths:
       tags:
         - Shop
       summary: Füge einen Artikel hinzu
-      description: Fügt einen Artikel hinzu
+      description: | 
+        # Fügt einen Artikel hinzu
+
+        ## Ein Artikel besteht aus:
+          - name
+          - preis
+        
+        
+        Inline-style: 
+        ![alt text](https://miro.medium.com/v2/resize:fit:606/1*9mhEcbqWgKRMGu47Jeh7mQ.png "Logo Title Text 1")
+
+        Colons can be used to align columns.
+
+        | Method        | Are           | Cool  |
+        | ------------- |:-------------:| -----:|
+        | PUT           | right-aligned | $1600 |
+        | POST          |   centered    |   $12 |
+        | DELETE        | centered      |   $12 |
+        | zebra stripes | are neat      |    $1 |
+
+
+
+
       operationId: postArtikel
       responses:
         '200':
